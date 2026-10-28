@@ -1,0 +1,31 @@
+:root{color-scheme:dark;--bg:#08101f;--panel:#111c33;--field:#0b1428;--line:#2a3857;--text:#f4f7ff;--muted:#a8b4cc;--blue:#6da8ff;--blue2:#3478f6}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#172b50 0%,var(--bg) 54%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+.app{width:min(100%,720px);margin:0 auto;padding:calc(22px + env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom))}
+.top{display:flex;align-items:center;gap:12px}
+.mark{width:48px;height:48px;border-radius:15px;background:linear-gradient(140deg,#8bc2ff,#2866ed);display:grid;place-items:center;color:#06122b;font-weight:900;font-size:17px;box-shadow:0 8px 28px #3478f633}
+h1{font-size:23px;margin:2px 0 0;letter-spacing:-.5px}
+.eyebrow{font-size:10px;letter-spacing:1.7px;color:#8ebaff;font-weight:800;margin:0}
+.pill{margin-left:auto;border:1px solid #40557d;color:#b6cbf4;border-radius:99px;padding:6px 9px;font-size:10px;letter-spacing:1px}
+.intro{padding:34px 2px 22px}
+h2{font-size:29px;line-height:1.12;letter-spacing:-1px;margin:10px 0}
+.muted,.note,footer{color:var(--muted);font-size:14px;line-height:1.55}
+.panel{background:#111c33eF;border:1px solid #2a3857;border-radius:23px;padding:20px;box-shadow:0 22px 60px #0003}
+label{display:block;font-size:13px;font-weight:750;margin:16px 0 8px}
+.optional{font-weight:400;color:var(--muted)}
+input,textarea,select{width:100%;border:1px solid var(--line);border-radius:13px;background:var(--field);color:var(--text);padding:14px;font:inherit;font-size:15px;outline:none}
+textarea{resize:vertical;min-height:94px}
+input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #6da8ff1a}
+button{border:0;border-radius:13px;padding:14px 16px;font:inherit;font-weight:800;cursor:pointer;min-height:48px}
+button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.primary{width:100%;margin-top:18px;background:linear-gradient(120deg,#8bc2ff,#4b88ff);color:#06122b}
+.secondary{flex:1;background:#1a2a49;border:1px solid #35496d;color:#edf4ff}
+.actions{display:flex;gap:10px;margin-top:10px}
+.result-wrap{margin-top:10px}
+.result-head{display:flex;align-items:center;justify-content:space-between}
+.result-head label{margin-bottom:8px}
+#status{font-size:12px;color:#9fc4ff}
+.note{font-size:12px;margin:15px 2px 0}
+footer{text-align:center;padding:18px 8px 0;font-size:12px}
+@media(min-width:600px){.app{padding-top:38px}.intro{padding-top:42px}h2{font-size:36px}.panel{padding:26px}}
+@media(prefers-reduced-motion:no-preference){button{transition:transform .12s ease,filter .12s ease}button:active{transform:scale(.985);filter:brightness(1.12)}}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101a35">
+  <meta name="description" content="Reply Desk — create thoughtful replies in seconds.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Reply Desk</title>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="mark">RD</div>
+      <div>
+        <p class="eyebrow">YOUR PERSONAL WRITING TOOL</p>
+        <h1>Reply Desk</h1>
+      </div>
+      <span class="pill">BETA</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">ONE COMMENT. ONE REPLY.</p>
+      <h2>Make every reply feel natural.</h2>
+      <p class="muted">Add the comment, choose a style, and get a ready-to-use response.</p>
+    </section>
+
+    <section class="panel">
+      <label for="person">Commenter's name <span class="optional">(optional)</span></label>
+      <input id="person" type="text" maxlength="80" placeholder="e.g. Alex">
+
+      <label for="comment">Their comment</label>
+      <textarea id="comment" rows="4" maxlength="1200" placeholder="Paste the comment here…"></textarea>
+
+      <label for="style">Reply style</label>
+      <select id="style">
+        <option value="app">App Response — match the comment</option>
+        <option value="friendship">Friendship Seed — warm and friendly</option>
+        <option value="soft">Soft Return — gentle conversation starter</option>
+        <option value="invite">Open Invite — invite a future chat</option>
+      </select>
+
+      <button id="generate" class="primary">Generate reply</button>
+      <div class="result-wrap">
+        <div class="result-head">
+          <label for="result">Your reply</label>
+          <span id="status" aria-live="polite"></span>
+        </div>
+        <textarea id="result" rows="5" placeholder="Your reply will appear here…" readonly></textarea>
+        <div class="actions">
+          <button id="copy" class="secondary">Copy reply</button>
+          <button id="regenerate" class="secondary">Regenerate</button>
+        </div>
+      </div>
+      <p class="note">This starter uses local templates and does not call an AI service.</p>
+    </section>
+
+    <footer>
+      <p>Reply Desk · Be kind. Be genuine. Respect people's boundaries.</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
