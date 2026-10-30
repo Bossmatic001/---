@@ -170,6 +170,7 @@ const proReplyBank = {
   general: {
     app: ["That’s an interesting observation. What detail led you to see it that way?", "There’s another angle worth considering here. What would you add to the discussion?", "That gives people something to think about. Which part matters most to you?"],
     
+    
     friendship: ["I’m curious how you arrived at that take 😄 Have you seen something similar happen before?", "That’s an interesting way to look at it. What do you think people usually overlook?", "You’ve opened up another angle here. What do you think people usually overlook?"],
 
     soft: ["That’s worth thinking about. What part of the situation feels most important to you?", "I can see there’s more than one way to read this. What context do you think matters?", "That’s a thoughtful point. Is there something you wish more people understood about it?"],
