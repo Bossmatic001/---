@@ -2,64 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#101a35">
-  <meta name="description" content="Reply Desk — create thoughtful replies in seconds.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="Official BMT Hub — Reply Deck">
+  <title>OFFICIAL BMT HUB | Reply Deck</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <title>Reply Desk</title>
 </head>
 <body>
-  <main class="app">
-    <header class="top">
-      <div class="mark">RD</div>
-      <div>
-        <p class="eyebrow">YOUR PERSONAL WRITING TOOL</p>
-        <h1>Reply Desk</h1>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <section id="splash" class="splash" aria-label="Welcome">
+    <div class="splash-mark">BMT<span>✦</span></div>
+    <p class="eyebrow">YOUR PERSONAL REPLY STUDIO</p>
+    <h1>OFFICIAL<br><span>BMT HUB</span></h1>
+    <div class="splash-line"></div>
+    <p class="splash-sub">Smart replies. Real conversations.</p>
+    <div class="loader"><i></i></div>
+  </section>
+
+  <main id="loginScreen" class="screen auth-screen hidden">
+    <div class="brand-row">
+      <div class="brand-icon">B<span>✦</span></div>
+      <div><div class="brand-name">OFFICIAL BMT HUB</div><div class="brand-tag">REPLY DECK · PRIVATE ACCESS</div></div>
+    </div>
+    <div class="auth-card">
+      <div class="lock-icon">⌑</div>
+      <p class="eyebrow">MEMBER ACCESS</p>
+      <h2>Welcome back.</h2>
+      <p class="muted">Enter your access code to open your reply studio.</p>
+      <form id="loginForm">
+        <label for="accessCode">ACCESS CODE</label>
+        <div class="code-wrap"><input id="accessCode" type="password" placeholder="Enter your code" autocomplete="off" required><button type="button" id="toggleCode" class="eye-btn" aria-label="Show or hide code">SHOW</button></div>
+        <p id="loginError" class="error hidden">That code isn’t correct. Please try again.</p>
+        <button class="primary-btn full" type="submit">Unlock Reply Deck <span>↗</span></button>
+      </form>
+      <div class="secure-note"><span>●</span> Personal workspace · Access code required</div>
+    </div>
+    <footer class="footnote">BUILT FOR BETTER CONVERSATIONS</footer>
+  </main>
+
+  <main id="appScreen" class="screen app-screen hidden">
+    <header class="topbar">
+      <div class="brand-row compact">
+        <div class="brand-icon">B<span>✦</span></div>
+        <div><div class="brand-name">OFFICIAL BMT HUB</div><div class="brand-tag">REPLY DECK</div></div>
       </div>
-      <span class="pill">BETA</span>
+      <button id="lockBtn" class="ghost-btn" type="button">Lock <span>↗</span></button>
     </header>
-
-    <section class="intro">
-      <p class="eyebrow">ONE COMMENT. ONE REPLY.</p>
-      <h2>Make every reply feel natural.</h2>
-      <p class="muted">Add the comment, choose a style, and get a ready-to-use response.</p>
+    <section class="hero">
+      <div class="hero-chip"><span class="pulse"></span> YOUR CONVERSATION TOOLKIT</div>
+      <h1>Say it better.<br><span>Every single time.</span></h1>
+      <p>Turn comments into natural replies that invite real conversations — without sounding copied and pasted.</p>
+      <div class="hero-stats"><div><strong>04</strong><small>REPLY STYLES</small></div><div><strong>01</strong><small>YOUR WORKSPACE</small></div><div><strong>∞</strong><small>NEW IDEAS</small></div></div>
     </section>
 
-    <section class="panel">
-      <label for="person">Commenter's name <span class="optional">(optional)</span></label>
-      <input id="person" type="text" maxlength="80" placeholder="e.g. Alex">
-
-      <label for="comment">Their comment</label>
-      <textarea id="comment" rows="4" maxlength="1200" placeholder="Paste the comment here…"></textarea>
-
-      <label for="style">Reply style</label>
-      <select id="style">
-        <option value="app">App Response — match the comment</option>
-        <option value="friendship">Friendship Seed — warm and friendly</option>
-        <option value="soft">Soft Return — gentle conversation starter</option>
-        <option value="invite">Open Invite — invite a future chat</option>
-      </select>
-
-      <button id="generate" class="primary">Generate reply</button>
-      <div class="result-wrap">
-        <div class="result-head">
-          <label for="result">Your reply</label>
-          <span id="status" aria-live="polite"></span>
-        </div>
-        <textarea id="result" rows="5" placeholder="Your reply will appear here…" readonly></textarea>
-        <div class="actions">
-          <button id="copy" class="secondary">Copy reply</button>
-          <button id="regenerate" class="secondary">Regenerate</button>
-        </div>
+    <section class="workspace">
+      <div class="section-heading"><div><p class="eyebrow">REPLY GENERATOR</p><h2>Build your response</h2></div><span class="step-pill">01 / CREATE</span></div>
+      <label for="comment">PASTE THE COMMENT</label>
+      <textarea id="comment" rows="4" placeholder="Paste the comment you want to reply to…"></textarea>
+      <div class="field-grid">
+        <div><label for="style">REPLY STYLE</label><select id="style"><option value="app">App Response</option><option value="friendship">Friendship Seed</option><option value="soft">Soft Return</option><option value="invite">Open Invite</option></select></div>
+        <div><label for="tone">TONE</label><select id="tone"><option value="natural">Natural & friendly</option><option value="professional">Professional</option><option value="playful">Playful</option><option value="warm">Warm & respectful</option></select></div>
       </div>
-      <p class="note">This starter uses local templates and does not call an AI service.</p>
+      <button id="generate" class="primary-btn full" type="button">Generate a reply <span>✦</span></button>
+      <div id="resultPanel" class="result-panel hidden">
+        <div class="result-top"><div><p class="eyebrow">YOUR DRAFT</p><h3>Ready to use</h3></div><span class="live-dot">● GENERATED</span></div>
+        <p id="result" class="result-text"></p>
+        <div class="result-actions"><button id="copy" class="primary-btn" type="button">Copy reply <span>▣</span></button><button id="regenerate" class="secondary-btn" type="button">Try another ↻</button></div>
+      </div>
+      <p id="status" class="status-line" aria-live="polite"></p>
     </section>
-
-    <footer>
-      <p>Reply Desk · Be kind. Be genuine. Respect people's boundaries.</p>
-    </footer>
+    <section class="style-guide">
+      <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR APPROACH</p><h2>Four ways to connect</h2></div></div>
+      <div class="style-cards">
+        <article class="style-card"><span class="style-num">01</span><h3>App Response</h3><p>Clear, direct, and useful for answering a point.</p></article>
+        <article class="style-card"><span class="style-num">02</span><h3>Friendship Seed</h3><p>Open the door to a genuine new connection.</p></article>
+        <article class="style-card"><span class="style-num">03</span><h3>Soft Return</h3><p>Keep it calm, thoughtful, and respectful.</p></article>
+        <article class="style-card"><span class="style-num">04</span><h3>Open Invite</h3><p>Give them an easy reason to reply again.</p></article>
+      </div>
+    </section>
+    <footer class="app-footer"><div class="brand-name">OFFICIAL BMT HUB</div><p>Thoughtful replies. Better connections.</p><small>Keep it genuine — edit every draft to match your voice.</small></footer>
   </main>
   <script src="app.js"></script>
 </body>

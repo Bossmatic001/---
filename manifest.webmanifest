@@ -1,12 +1,9 @@
 {
-  "name": "Reply Desk",
-  "short_name": "Reply Desk",
-  "description": "A personal reply-writing tool",
+  "name": "OFFICIAL BMT HUB — Reply Deck",
+  "short_name": "BMT Reply Deck",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#08101f",
-  "theme_color": "#101a35",
-  "icons": [
-    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
-  ]
+  "background_color": "#080d1b",
+  "theme_color": "#080d1b",
+  "description": "Your personal reply studio"
 }
